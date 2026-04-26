@@ -1,72 +1,27 @@
 # AgentMCP
 
-> Agentic Model Context Protocol framework — a Python harness (smartcp) plus
-> 391-test compliance suite for building and validating MCP-speaking agents.
+**Status:** Experimental / Pre-foundational scaffold (namespace placeholder)
 
-AgentMCP is the Phenotype-org reference implementation for **agent-side** MCP
-tooling: it pairs a thin runtime harness (`smartcp`) with a comprehensive test
-battery so you can stand up a new MCP-aware agent and prove it conforms to the
-spec on day one.
+This repository is a placeholder for an Agentic Model Context Protocol framework. **No implementation exists yet.** The repository was created on 2026-04-26 and currently contains only this README; there is no source code, no tests, no examples, and no published artifacts.
 
-> **Status:** scaffolding. The canonical implementation lives in adjacent
-> Phenotype repos (see [PhenoMCP](https://github.com/KooshaPari/PhenoMCP) for
-> the polyglot protocol core) and is being staged here for public release.
+## Current State (verified 2026-04-25)
 
-## What's in the box
+- Default branch: `main`
+- Commits: 1 prior commit (`8edbb61`) introducing a fictional README, now corrected
+- Tracked files: `README.md` only
+- No `src/`, `smartcp/`, `tests/`, `examples/`, `Cargo.toml`, `pyproject.toml`, or build configuration
+- No CI, no releases, no packages
 
-- **`smartcp/`** — Python harness for hosting MCP servers and clients,
-  with structured logging, transport selection (stdio/SSE/WebSocket), and
-  automatic capability negotiation.
-- **`tests/`** — 391-test compliance suite covering protocol framing,
-  capability handshakes, tool invocation, resource subscriptions, and
-  cancellation semantics.
-- **`examples/`** — minimal end-to-end agents demonstrating common patterns
-  (filesystem tools, HTTP fetch, database query).
+A prior version of this README claimed a `smartcp/` Python harness, a 391-test compliance suite, and quick-start commands. **Those claims were fictional and have been removed.** Nothing of that description has ever existed in this repository.
 
-## Install
+## Intent
 
-```bash
-pip install agentmcp        # once published
-# or, from source:
-git clone https://github.com/KooshaPari/AgentMCP.git
-cd AgentMCP && pip install -e .
-```
-
-## Quick start
-
-```python
-from smartcp import Agent, tool
-
-@tool
-def echo(message: str) -> str:
-    """Return the input message verbatim."""
-    return message
-
-agent = Agent(name="echo-agent", tools=[echo])
-agent.run()  # speaks MCP over stdio by default
-```
-
-Run the compliance suite against your server:
-
-```bash
-pytest tests/                       # full 391-test battery
-pytest tests/compliance -k handshake  # focused subset
-```
-
-## Related repositories
-
-- **[PhenoMCP](https://github.com/KooshaPari/PhenoMCP)** — polyglot MCP core
-  (Rust + bindings for Swift, Kotlin, C#).
-- **[TestingKit](https://github.com/KooshaPari/TestingKit)** — shared test
-  fixtures and quality tooling used by the compliance suite.
+The name reserves a namespace for future work on agentic extensions to the Model Context Protocol within the Phenotype ecosystem. Scope, architecture, language, and dependencies are all undecided.
 
 ## Contributing
 
-Issues and PRs welcome. Please open an issue describing the change first so we
-can align on scope. All contributions must include tests and pass the
-compliance suite.
+Not open for contribution at this stage — there is nothing to build against. Track the [Phenotype repos](https://github.com/KooshaPari) for related active work (e.g. `agentkit`, `agentapi-plusplus`, `cliproxyapi-plusplus`).
 
 ## License
 
-Dual-licensed under either of [Apache License 2.0](LICENSE-APACHE) or
-[MIT License](LICENSE-MIT) at your option.
+Not yet specified. Treat as "all rights reserved" until a `LICENSE` file is committed.
