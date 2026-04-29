@@ -1,5 +1,7 @@
 # AgentMCP / SmartCP
 
+[![AI Slop Inside](https://sladge.net/badge.svg)](https://sladge.net)
+
 > **Note:** This local checkout is a SmartCP app, not the AgentMCP repo at github.com/KooshaPari/AgentMCP. Do not push from this directory. See ../docs/security/AGENTMCP_REMOTE_REVERT_RUNBOOK.md.
 
 **SmartCP MCP Server** - A production-grade Model Context Protocol (MCP) server with resource access enforcement, intelligent routing, and multi-backend integration.
