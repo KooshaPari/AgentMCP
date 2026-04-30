@@ -31,10 +31,10 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -50,7 +50,7 @@ jobs:
           python scripts/generate_openapi_schema.py > schema/bifrost-extensions.openapi.json
 
       - name: Validate OpenAPI schema
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '18'
 
@@ -64,7 +64,7 @@ jobs:
           swagger-cli validate schema/bifrost-extensions.openapi.json
 
       - name: Set up Node.js for SDK generation
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
@@ -74,7 +74,7 @@ jobs:
           npm install -g @openapitools/openapi-generator-cli
 
       - name: Set up Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
         with:
           go-version: '1.21'
 
@@ -126,7 +126,7 @@ jobs:
             --enable-post-process-file
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5
         with:
           name: generated-sdks
           path: codegen/sdks/
@@ -168,16 +168,16 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Download generated SDKs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
           name: generated-sdks
           path: codegen/sdks/
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: '3.12'
 
@@ -194,7 +194,7 @@ jobs:
           twine upload dist/* || echo "Python SDK publish skipped or failed (may already exist)"
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
@@ -210,7 +210,7 @@ jobs:
           npm publish || echo "TypeScript SDK publish skipped or failed (may already exist)"
 
       - name: Set up Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
         with:
           go-version: '1.21'
 

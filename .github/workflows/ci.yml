@@ -20,7 +20,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -28,12 +28,12 @@ jobs:
           version: ${{ env.UV_VERSION }}
       
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: ~/.cache/uv
           key: ${{ runner.os }}-uv-${{ hashFiles('requirements.txt', 'pyproject.toml') }}
@@ -61,7 +61,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -69,12 +69,12 @@ jobs:
           version: ${{ env.UV_VERSION }}
       
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: ~/.cache/uv
           key: ${{ runner.os }}-uv-${{ hashFiles('requirements.txt', 'pyproject.toml') }}
@@ -99,7 +99,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -107,12 +107,12 @@ jobs:
           version: ${{ env.UV_VERSION }}
       
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.python-version }}
       
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: ~/.cache/uv
           key: ${{ runner.os }}-uv-${{ matrix.python-version }}-${{ hashFiles('requirements.txt', 'pyproject.toml') }}
@@ -143,7 +143,7 @@ jobs:
           fail_ci_if_error: false
       
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: test-results-${{ matrix.python-version }}
@@ -185,7 +185,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -193,7 +193,7 @@ jobs:
           version: ${{ env.UV_VERSION }}
       
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       
@@ -220,7 +220,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -228,7 +228,7 @@ jobs:
           version: ${{ env.UV_VERSION }}
       
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       
